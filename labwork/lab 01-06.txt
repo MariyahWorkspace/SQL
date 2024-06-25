@@ -1,0 +1,43 @@
+//create Employee Table
+CREATE TABLE Employee (
+	empName varchar(20),
+	empID int,
+	contact bigint,
+	salary int
+	);
+desc Employee;
+
+//insert records
+INSERT INTO Employee VALUES 
+("Rob Davis", 101, 9987600932, 50000),
+("Hilly Billy", 102, 8875633421, 80000),
+("John Doe", 103, 7643529081, 45000),
+("Downey Jr.", 104, 9055632154, 35000),
+("Silly Goose", 105, 8097566432, 30200),
+("Shag Harvey", 106, 9199933541, 25000),
+("Nilan Dame", 107, 8843265766, 28000),
+("Jeremy Kong", 108, 8888165731, 19000),
+("Alexa Amazon", 109, 7785632650, 41000),
+("Siri Apple", 110, 80097440023, 59000);
+
+//retrieve all info
+SELECT * FROM Employee;
+
+//add column 'City'
+ALTER TABLE Employee
+ADD COLUMN City varchar(20);
+DESC Employee;
+SELECT * FROM Employee;
+
+//insert city information
+UPDATE Employee SET City="Washington" WHERE empID=101;
+UPDATE Employee SET City="NY City" WHERE empID=102;
+UPDATE Employee SET City="Mumbai" WHERE empID=103;
+UPDATE Employee SET City="Birmingham" WHERE empID=104;
+UPDATE Employee SET City="Hogwarts" WHERE empID=105;
+UPDATE Employee SET City="Bandra" WHERE empID=106;
+UPDATE Employee SET City="Hawaii" WHERE empID=107;
+UPDATE Employee SET City="Macau" WHERE empID=108;
+UPDATE Employee SET City="Shillong" WHERE empID=109;
+UPDATE Employee SET City="Ooty" WHERE empID=110;
+SELECT * FROM Employee;
