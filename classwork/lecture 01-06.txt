@@ -1,0 +1,58 @@
+create database db_name;
+show databases;
+use db_name; 
+show tables;
+
+--------------------------------------
+
+Datatypes - int, varchar(), decimal(10,2), date
+
+---------------------------------------------
+
+CREATE TABLE
+create table tb_name (
+	col_name1 data_type(len),
+	col_name2 data_type(len)
+	);
+desc tb_name;
+
+VIEW TABLE
+select * from tb_name; 				//view full table
+select col_name, col_name2 from tb_name; 	//view specified columns from table
+
+ALTER TABLE
+alter table tb_name 				//changes column name
+rename column col_name to newcol_name data_type(len);
+
+alter table tb_name				//add column
+add column col_name data_type(len);	
+
+alter table tb_name				//change datatype of column or length of datatype
+alter/modify column col_name datatype(len);	
+
+alter table tb_name
+drop column col_name;				//deletes a column	
+
+--------------------------------------------------------------------------------------------
+
+INSERT VALUES
+insert into tb_name values (val1, "val2",...);
+insert into tb_name(col_name1, col_name3,...) 	//insert values in specific columns
+values ("val1", val2);
+
+UPDATE VALUES
+update tb_name 
+set coln_name= val				//column name of value to be changed
+where col_name = val; 				//column name of value that identifies the row
+		  ||
+(for identification of row whose value needs to be changed) 
+
+
+
+
+
+
+
+
+
+

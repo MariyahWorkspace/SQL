@@ -1,0 +1,33 @@
+PRIMARY KEY-FOREIGN KEY					//pk checks for unique values, but helps in creating a relationship with other columns
+
+( in_table1
+ col_name data_type,
+ primary key(col_name),
+...);
+
+( in_table2
+ col_name1 data_type,					//col_name could be same as pk column in table1 or different
+ foreign key(col_name1) references tb_name1(col_name),
+...);
+
+--------------------------------------------------------------------------------------------------------------------------
+
+JOINS
+
+INNER JOIN 						//returns intersection values from both tables
+select table1.col_name1, table2.col_name2		//columns to be viewed
+from table1
+inner join table2 on
+table1.col_name = table2.col_name;			//these both columns must have same values (matching columns)
+
+LEFT JOIN						//returns all values of left table + matching values from right(null for missing entries)
+select table1.col_name1, table2.col_name2		
+from table1
+left join table2 on
+table1.col_name = table2.col_name;
+
+RIGHT JOIN						//returns all values of right table + matching values from left (null for missing entries)
+select table1.col_name1, table2.col_name2		
+from table1
+right join table2 on
+table1.col_name = table2.col_name;

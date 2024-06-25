@@ -1,0 +1,36 @@
+CONSTRAINTS
+
+NOT NULL 				//when value should never be null/unknown/missing
+col_name data_type(len) not null,...
+alter table tb_name add/modify column col_name data_type(len) not null;
+
+UNIQUE
+col_name data_type(len) unique,...
+alter table tb_name add/modify column col_name data_type(len) unique;
+
+CHECK					//applied on columns when a particular condition must hold true
+col_name data_type() CHECK(col_name >=< value),		//if true, then entry accepted
+
+eg: 	(
+	age int,
+	check(age>18)
+	);
+alter table tb_name add check(col_name >=< val);
+
+DEFAULT					//if value not entered, then what value should be set as default
+col_name data_type(len) default val,...
+alter table tb_name add/modify column col_name data_type(len) default val;
+
+
+--------------------------------------------------------------------------------------------------------------------------
+AGGREGATE FUNCTIONS
+--------------------------------------------------------------------------------------------------------------------------
+
+MIN/MAX
+select min/max(col_name) [as alias_name] from tb_name;		//[..] optional
+
+COUNT
+select count(col_name) [as alias_name] from tb_name;		//[..] optional
+
+AVERAGE
+select avg(col_name) as alias_name from tb_name;
